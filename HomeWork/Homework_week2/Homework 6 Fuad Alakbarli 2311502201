@@ -1,0 +1,17 @@
+public class PalindromeChecker {
+    public static boolean isPalindrome(String str) {
+        // Boşlukları, noktalama işaretlerini ve özel karakterleri kaldırın
+        str = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        
+        // Dizeyi tersine çevirin
+        String reversedStr = new StringBuilder(str).reverse().toString();
+        
+        // Tersine çevrilmiş dize ile orijinal dizeyi karşılaştırın
+        return str.equals(reversedStr);
+    }
+
+    public static void main(String[] args) {
+        String testString = "A man, a plan, a canal: Panama";
+        System.out.println(isPalindrome(testString));  // true
+    }
+}
